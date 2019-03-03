@@ -1,0 +1,12 @@
+.button {
+  border: 0;
+  background: $panelBgColor;
+  color: $buttonTextColor;
+  height: $buttonHeight;
+  padding: $buttonPaddingHorizontal;
+  font-size: $fontSizeDefault;
+  cursor: pointer;
+  border-radius: $panelBorderRadius;
+}
+
+@include _icon-list($buttonIconSize, $buttonIconMarginRight, inline-block, button, send deposit);

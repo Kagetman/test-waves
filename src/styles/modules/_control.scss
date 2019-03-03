@@ -1,0 +1,18 @@
+.control {
+  &__item {
+    width: $controlItemSize;
+    height: $controlItemSize;
+    margin-bottom: $controlItemMarginBottom;
+    border-radius: $panelBorderRadius;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &-active {
+      background: $activeColor;
+    }
+  }
+}
+
+@include _icon-link($controlIconSize, 0, block, control, wallet dex token setting exit);

@@ -1,0 +1,52 @@
+.menu {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  min-width: 140px;
+  justify-content: flex-end;
+
+  &__list {
+    overflow: hidden;
+    position: absolute;
+    padding: 0;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    margin: 0;
+    height: 0;
+  }
+
+  &__inner {
+    @include _transform(translate(0,-100%));
+    @include _transition(transform 0.5s 0.1s);
+  }
+
+  &__item{
+    display: block;
+    padding: 5px 20px;
+    width: 100%;
+    cursor: pointer;
+    background: $panelBgColor;
+
+    &:hover {
+      color: $selectedFontColor;
+      background: $assetsBgColor;
+    }
+  }
+
+  @include _icon($menuIconSize, $menuIconMarginRight, inline-block, deposit);
+
+  &-mobile {
+    margin-left: auto;
+  }
+
+  &:hover {
+    .menu__inner {
+      @include _transform(translate(0,0));
+    }
+
+    .menu__list {
+      height: auto;
+    }
+  }
+}

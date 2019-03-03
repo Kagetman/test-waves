@@ -1,0 +1,207 @@
+include ./utils/mixins
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title Waves
+		meta(name="theme-color" content="#c9e0e04d")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black-translucent")
+		meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400")
+		link(rel="stylesheet" href="../styles/main.css")
+	body
+		.assets
+			.assets__header
+				div(class="nav nav-desktop")
+					div(class="nav__item nav__item-assets nav__item-active")
+						.nav__link Assets
+					div(class="nav__item nav__item-portfolio")
+						.nav__link Portfolio
+					div(class="nav__item nav__item-transaction")
+						.nav__link Transactions
+					div(class="nav__item nav__item-leasing")
+						.nav__link Leasing
+
+				div(class="menu menu-mobile")
+					ul.menu__list
+						.menu__inner
+							li.menu__item Assets
+							li.menu__item Portfolio
+							li.menu__item Transactions
+							li.menu__item Leasing
+							li.menu__item Wallet
+							li.menu__item Dex
+							li.menu__item Token
+							li.menu__item Setting
+							li.menu__item Exit
+			.assets__sidebar
+				div(class="assets__control assets__control-top")
+					.control
+						div(class="control__item control__item-wallet control__item-active")
+							span.control__link
+						div(class="control__item control__item-dex")
+							span.control__link
+						div(class="control__item control__item-token")
+							span.control__link
+
+				div(class="assets__control assets__control-bottom")
+					.control
+						div(class="control__item control__item-setting")
+							span.control__link
+						div(class="control__item control__item-exit")
+							span.control__link
+			.assets__avatar
+				.avatar
+					img(src="../img/avatar.jpg")
+			.assets__main
+				.assets__toolbar
+					.assets__button
+						button(class="button button-send") Send
+					.assets__button
+						button(class="button button-deposit") Receive
+				.assets__chart
+					.chart
+						.chart__toolbar
+							.chart__tab
+								div(class="tab tab-desktop")
+									div(class="tab__item tab__item-active")
+										.tab__link
+											span.tab__name Waves
+											span.tab__value $10.58
+									.tab__item
+										.tab__link
+											span.tab__name Bitcoin
+											span.tab__value $9,308.49
+									.tab__item
+										.tab__link
+											span.tab__name Ethereum
+											span.tab__value $585.69
+								div(class="tab tab-mobile")
+									.menu
+										//.menu__toggle
+										span.tab__name Waves
+										span.tab__value $10.58
+										ul.menu__list
+											.menu__inner
+												li.menu__item
+													span.tab__name Bitcoin
+													span.tab__value $9,308.4958
+												li.menu__item
+													span.tab__name Ethereum
+													span.tab__value $585.69
+							.chart__period
+								.period
+									div(class="period__item period__item-active")
+										.period__link 1D
+									.period__item
+										.period__link 1W
+									.period__item
+										.period__link 1M
+						.chart__info
+							.info
+								.info__item
+									.info__value $ 585.69
+									.info__name Price ethereum
+								.info__item
+									.info__value -$ 251.41
+									.info__name Since last month (USD)
+								.info__item
+									.info__value -28.57%
+									.info__name Since last month (%)
+						.chart__area
+							img(src="img/chart.jpg")
+				.assets__list
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "waves-30")
+								span.asset__name Waves
+								span.asset__status qualified
+							.asset__content
+								span.asset__value 0.04479075
+								span.asset__description of total balance 0.95579075
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "bitcoin-30")
+								span.asset__name Bitcoin
+								span.asset__status qualified
+							.asset__content
+								span.asset__value 1.000069
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+							.asset__unpin
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "ethereum-30")
+								span.asset__name Ethereum
+								span.asset__status qualified
+							.asset__content
+								span.asset__value 0.00000001
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+							.asset__unpin
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "usd-30")
+								span.asset__name US Dollar
+								span.asset__status qualified
+							.asset__content
+								span.asset__value 5.01
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+							.asset__unpin
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "euro-30")
+								span.asset__name Euro
+								span.asset__status qualified
+							.asset__content
+								span.asset__value 0.29
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+							.asset__unpin
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "ltc-30")
+								span.asset__name Litecoin
+								span.asset__status qualified
+							.asset__content
+								span.asset__value 1.000300
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+							.asset__unpin
+					.assets__item
+						.asset
+							.asset__title
+								span.asset__icon
+									+sprite("icon", "bitcoin-30")
+								span.asset__name Sviblovo
+							.asset__content
+								span.asset__value 34.998
+							.asset__actions
+								div(class="asset__action asset__action-send") Send
+								div(class="asset__action asset__action-deposit") Receive
+							.asset__unpin
+					.assets__item
+						div(class="asset asset-empty") +

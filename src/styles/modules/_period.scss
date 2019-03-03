@@ -1,0 +1,9 @@
+.period {
+  display: flex;
+
+  @include _item-inline($periodMarginRight, $activeColor, 0);
+
+  &__item {
+    font-size: $fontSizeSmall;
+  }
+}

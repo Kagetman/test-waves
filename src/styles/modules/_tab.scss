@@ -1,0 +1,43 @@
+.tab {
+  @include _item-inline($tabMarginRight, $activeColor, 0);
+
+  &__item {
+    font-size: $fontSizeMedium;
+
+    &-active {
+      .tab__value:before {
+        background: $activeColor;
+      }
+    }
+  }
+
+  &__value {
+    margin-left: 5px;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+      background: $defaultFontColor;
+
+      @include _round(3px);
+    }
+  }
+
+  &-mobile {
+    position: relative;
+
+    .menu {
+      justify-content: flex-start;
+
+      &__item {
+        padding: 5px;
+      }
+    }
+  }
+
+  &-desktop {
+    display: none;
+  }
+}

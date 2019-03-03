@@ -1,0 +1,24 @@
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px 0 0;
+
+  &__item {
+    padding: 0 20px;
+    text-align: center;
+    margin-bottom: 7px;
+  }
+
+  &__value {
+    font-size: $fontSizeBold;
+    font-weight: $fontWeightLight;
+    color: $selectedFontColor;
+    margin-bottom: 8px;
+  }
+
+  &__name {
+    font-size: $fontSizeSmall;
+    text-transform: uppercase;
+  }
+}

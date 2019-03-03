@@ -1,0 +1,11 @@
+.avatar {
+  margin: $avatarMargin $avatarMargin 0;
+  overflow: hidden;
+  position: fixed;
+
+  @include _round($avatarIconSize);
+
+  img {
+    max-width: 100%;
+  }
+}

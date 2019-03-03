@@ -1,0 +1,72 @@
+@mixin _transform($value){
+  transform: ($value);
+}
+
+@mixin _transition($value){
+  transition: ($value);
+}
+
+@mixin _round($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin _icon($size, $margin, $display, $item) {
+  &:before {
+    content: "";
+    width: $size;
+    height: $size;
+    display: $display;
+    vertical-align: middle;
+    margin-right: $margin;
+    background-image: url("../img/sprites/sprite.svg##{$item}");
+    background-position: center center;
+  }
+}
+
+@mixin _icon-link($size, $margin, $display, $class, $list) {
+  @each $item in $list {
+    .#{$class}__item-#{$item} {
+      .#{$class}__link {
+        @include _icon($size, $margin, $display, $item);
+      }
+    }
+  }
+}
+
+@mixin _icon-list($size, $margin, $display, $class, $list) {
+  @each $item in $list {
+    .#{$class}-#{$item} {
+      @include _icon($size, $margin, $display, $item);
+    }
+  }
+}
+
+@mixin _separator($color, $gap) {
+  &:before {
+    content: "";
+    position: absolute;
+    left: $gap;
+    right: $gap;
+    bottom: 0;
+    height: 1px;
+    background: $color;
+  }
+}
+
+@mixin _item-inline($margin, $color, $gap) {
+  &__item {
+    position: relative;
+    cursor: pointer;
+    align-items: center;
+    display: inline-flex;
+    margin: 0 $margin 0 0;
+
+    &-active {
+      color: $color;
+
+      @include _separator($color, $gap);
+    }
+  }
+}

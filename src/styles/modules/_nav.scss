@@ -1,0 +1,9 @@
+.nav {
+  @include _item-inline($navMarginRight, $activeColor, 0);
+
+  &-desktop {
+    display: none;
+  }
+}
+
+@include _icon-link($navIconSize, $navIconMarginRight, inline-block, nav, assets portfolio transaction leasing);

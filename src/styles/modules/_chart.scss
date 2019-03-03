@@ -1,0 +1,34 @@
+.chart {
+  padding: 0 0 $gapSize;
+  margin: 0 $gapSize $gapSize 0;
+  background: $panelBgColor;
+  border-radius: $panelBorderRadius;
+
+  &__toolbar {
+    display: flex;
+    height: $chartToolbarHeight;
+    position: relative;
+    margin: 0 $panelPaddingHorizontal;
+
+    @include _separator($separatorBgColor, 0);
+  }
+
+  &__tab {
+    display: flex;
+  }
+
+  &__period {
+    margin-left: auto;
+    display: flex;
+  }
+
+  &__area {
+    height: $chartAreaHeight;
+    margin: 0 $panelPaddingHorizontal 20px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
