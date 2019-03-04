@@ -1,73 +1,98 @@
-.assets {
+.asset {
+  background: $panelBgColor;
+  height: $assetHeight;
+  box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 100%;
-  background: $assetsBgColor;
+  border-radius: $panelBorderRadius;
+  padding: 0 $panelPaddingHorizontal;
 
-  &__header {
-    height: $headerHeight;
-    background: $panelBgColor;
-    position: fixed;
-    display: flex;
-    width: 100%;
-    padding: 0 $panelPaddingHorizontal 0 ($sidebarWidth + 25px);
-    box-sizing: border-box;
-    z-index: 5;
-  }
-
-  &__sidebar {
-    width: $sidebarWidth;
-    display: none;
-    flex-direction: column;
-    background: $panelBgColor;
-    position: fixed;
-    height: 100%;
-    box-sizing: border-box;
-    align-items: center;
-    padding: $headerHeight 0 0;
+  &:hover {
     box-shadow: $boxShadow;
-    z-index: 5;
   }
 
-  &__control {
-    &-top {
-      margin: 10px 0 0;
-    }
-
-    &-bottom {
-      margin: auto 0 32px;
-    }
+  &__title {
+    margin: 24px 0 13px;
   }
 
-  &__avatar {
-    width: $avatarWidth;
-    margin-bottom: auto;
+  &__name {
+    font-size: $fontSizeMedium;
+    color: $selectedFontColor;
+  }
+
+  &__icon {
+    width: $assetIconSize;
+    height: $assetIconSize;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  &__value {
+    display: block;
+    font-size: $fontSizeBold;
+    font-weight: $fontWeightLight;
+    color: $selectedFontColor;
+    margin-bottom: 7px;
+  }
+
+  &__description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+
+  &__status {
+    font-size: $fontSizeSmaller;
+    text-transform: uppercase;
+    color: $activeColor;
+    padding: 3px 4px;
+    background: $assetStatusBg;
+    margin-left: 7px;
+    vertical-align: middle;
+  }
+
+  &__content {
+    margin: 0 0 10px;
+  }
+
+  &__actions {
+    margin-top: auto;
+    padding: 8px 0;
     position: relative;
-    z-index: 10;
-    display: flex;
+    border-top: 1px dotted $separatorBgColor;
   }
 
-  &__main {
-    flex: 1;
-    margin: ($headerHeight + $gapSize) 0 0 $gapSize;
+  &__action {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 13px;
+    padding: 15px 0;
+    cursor: pointer;
+
+    &:hover {
+      color: $selectedFontColor;
+    }
   }
 
-  &__toolbar {
-    display: flex;
+  &__unpin {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+
+    @include _icon($unpinIconSize, 0, inline-block, unpin);
   }
 
-  &__button {
-    margin: 0 $gapSize $gapSize 0;
-  }
-
-  &__list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  &__item {
-    width: 100%;
-    margin: 0 $gapSize $gapSize 0;
+  &-empty {
+    align-items: center;
+    justify-content: center;
+    font-weight: $fontWeightLight;
+    font-size: $assetEmptyFontSize;
+    color: $separatorBgColor;
+    cursor: pointer;
   }
 }
+@include _icon-list($assetActionIconSize, $assetActionMarginRight, inline-block, asset__action, send deposit);
