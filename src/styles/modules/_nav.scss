@@ -1,4 +1,8 @@
 .nav {
+  &__item {
+    color: $navFontColor;
+  }
+
   @include _item-inline($navMarginRight, $activeColor, 0);
 
   &-desktop {
